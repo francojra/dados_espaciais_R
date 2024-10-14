@@ -8,3 +8,7 @@
 
 library(raster) # Ler dados espaciais
 
+## É necessário salvar os dados espaciais na pasta do computador.
+
+
+
