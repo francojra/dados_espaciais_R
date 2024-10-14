@@ -1,2 +1,3 @@
-# dados_espaciais_R
-Script com análises de dados espaciais.
+# Análise de dados espaciais em R
+
+
