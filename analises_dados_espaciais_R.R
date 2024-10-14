@@ -9,6 +9,6 @@
 library(raster) # Ler dados espaciais
 
 ## É necessário salvar os dados espaciais na pasta do computador.
-
+## Dados georreferenciados são os dados do tipo tiff.
 
 
