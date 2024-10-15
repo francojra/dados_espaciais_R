@@ -26,6 +26,8 @@ library(raster) # Ler dados espaciais
 library(sp)
 library(sf)
 
+# Mapa com a função raster -----------------------------------------------------------------------------------------------------------------
+
 raster <- raster("00S48_DD.tif")
 plot(raster)
 
