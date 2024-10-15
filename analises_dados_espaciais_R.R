@@ -25,6 +25,7 @@
 library(raster) # Ler dados espaciais
 library(sp)
 library(sf)
+library(geobr)
 
 # Mapa com a função raster -----------------------------------------------------------------------------------------------------------------
 
