@@ -22,10 +22,10 @@
 
 # Carregar pacotes -------------------------------------------------------------------------------------------------------------------------
 
-library(raster) # Ler dados espaciais
-library(sp)
+library(raster) 
+library(tidyverse)
 library(sf)
-library(geobr) # Pacote com informações do estados e biomas brasileiros
+library(geobr) 
 
 # Mapa com a função raster -----------------------------------------------------------------------------------------------------------------
 
