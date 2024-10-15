@@ -25,7 +25,7 @@
 library(raster) # Ler dados espaciais
 library(sp)
 library(sf)
-library(geobr)
+library(geobr) # Pacote com informações do estados e biomas brasileiros
 
 # Mapa com a função raster -----------------------------------------------------------------------------------------------------------------
 
