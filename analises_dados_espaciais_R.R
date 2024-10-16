@@ -72,10 +72,11 @@ view(dados_escolas1)
 ## Criar mapa
 
 ggplot() +
-  geom_sf(data = dados_estados1) +
+  geom_sf(data = dados_estados1, fill = "transparent") +
   geom_sf(data = dados_escolas1, aes(color =  urban,
                                      fill = urban)) +
-  scale_color_manual(values = c("#98374983", "red"),       
+  scale_color_manual(values = c("#8c510a", "#01665e"),       
    name = "Tipos de escola") +
-  scale_fill_manual(values = c("#98374983", "red"),       
-   name = "Tipos de escola")
+  scale_fill_manual(values = c("#8c510a", "#01665e"),       
+   name = "Tipos de escola") +
+  theme_bw()
