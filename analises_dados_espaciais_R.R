@@ -44,10 +44,18 @@ view(dados_estados)
 dados_escolas <- geobr::read_schools()
 view(dados_escolas)
 
-dados_escolas1 |> dados_escolas |>
-  select()
-  group_by(name_muni) |>
-  summarise(n = n(urban)) |>
+## Tipo de dados
+
+class(dados_escolas)
+
+
+dados_escolas1 <- dados_escolas %>%
+  select(name_muni, urban) %>%
+  drop_na() %>%
+  group_by(name_muni) %>%
+  summarise(n = n()) %>%
+  view()
   
+
 
 ggplot()
