@@ -32,6 +32,12 @@ plot(raster)
 
 # Mapa com o pacote geobr --------------------------------------------------------------------------------------------------------------------
 
+## Consultar datasets
+
+datasets <- list_geobr()
+
+## Ver datasets
+
 dados_biomas <- geobr::read_biomes()
 view(dados_biomas)
 
@@ -59,4 +65,5 @@ dados_escolas1 <- dados_escolas %>%
   summarise(n = n()) %>%
   view()
   
-ggplot()
+ggplot() +
+  geom_sf(data = dados_escolas1)
