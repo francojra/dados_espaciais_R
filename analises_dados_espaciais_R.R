@@ -48,13 +48,16 @@ view(dados_escolas)
 
 class(dados_escolas)
 
+## Selecionar apenas as primeiras 250 observações
+
+dados_escolas <- dados_escolas[1:250, ]
 
 dados_escolas1 <- dados_escolas %>%
   select(name_muni, urban) %>%
+  filter(1:250) %>%
   drop_na() %>%
-  group_by(name_muni) %>%
-  summarise(n = n()) %>%
-  view()
+  group_by(name_muni, urban) %>%
+  summarise(n = n()) 
   
 
 
