@@ -63,20 +63,16 @@ dados_escolas1 <- dados_escolas %>%
   select(name_muni, urban, abbrev_state) %>%
   filter(abbrev_state %in% c("RO", "AC", "AM", "RR", "PA",
                              "AP", "TO")) %>%
-  drop_na() %>%
-  group_by(name_muni, urban) %>%
-  summarise(n = n()) %>%
+  drop_na() 
 
 view(dados_escolas1)
 
 ## Criar mapa
 
 ggplot() +
-  geom_sf(data = dados_estados1, fill = "transparent") +
-  geom_sf(data = dados_escolas1, aes(color =  urban,
-                                     fill = urban)) +
+  geom_sf(data = dados_estados1, fill = "transparent",
+          color = "black") +
+  geom_sf(data = dados_escolas1, aes(color =  urban)) +
   scale_color_manual(values = c("#8c510a", "#01665e"),       
-   name = "Tipos de escola") +
-  scale_fill_manual(values = c("#8c510a", "#01665e"),       
-   name = "Tipos de escola") +
+   name = "Número de escolas") +
   theme_bw()
