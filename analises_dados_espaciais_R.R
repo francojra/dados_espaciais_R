@@ -54,11 +54,9 @@ dados_escolas <- dados_escolas[1:250, ]
 
 dados_escolas1 <- dados_escolas %>%
   select(name_muni, urban) %>%
-  filter(1:250) %>%
   drop_na() %>%
   group_by(name_muni, urban) %>%
-  summarise(n = n()) 
+  summarise(n = n()) %>%
+  view()
   
-
-
 ggplot()
