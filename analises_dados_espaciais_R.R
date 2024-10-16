@@ -55,6 +55,8 @@ view(dados_escolas)
 
 # Mapa do número de escolas urbanas e rurais -----------------------------------------------------------------------------------------------
 
+## Manipular dados
+
 dados_estados1 <- dados_estados |>
   filter(name_region == "Norte")
 view(dados_estados1)
@@ -68,9 +70,9 @@ dados_escolas1 <- dados_escolas %>%
   summarise(n = n()) %>%
   view()
 
-glimpse(dados_escolas1)
+## Criar mapa
 
 ggplot() +
-  geom_sf(data = dados_estados) +
+  geom_sf(data = dados_estados1) +
   geom_sf(data = dados_escolas1, aes(color =  urban, 
                                      fill = urban))
