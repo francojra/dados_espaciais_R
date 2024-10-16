@@ -36,7 +36,7 @@ plot(raster)
 
 datasets <- list_geobr()
 
-## Ver datasets
+## Visualizar datasets
 
 dados_biomas <- geobr::read_biomes()
 view(dados_biomas)
@@ -47,9 +47,6 @@ view(dados_amazonia)
 dados_estados <- geobr::read_state()
 view(dados_estados)
 
-ggplot() +
-  geom_sf(data = dados_estados)
-
 dados_escolas <- geobr::read_schools()
 view(dados_escolas)
 
@@ -59,6 +56,7 @@ view(dados_escolas)
 
 dados_estados1 <- dados_estados |>
   filter(name_region == "Norte")
+
 view(dados_estados1)
 
 dados_escolas1 <- dados_escolas %>%
@@ -68,7 +66,8 @@ dados_escolas1 <- dados_escolas %>%
   drop_na() %>%
   group_by(name_muni, urban) %>%
   summarise(n = n()) %>%
-  view()
+
+view(dados_escolas1)
 
 ## Criar mapa
 
