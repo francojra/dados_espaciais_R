@@ -6,6 +6,11 @@
 
 ### Tópicos do script:
 
-1. Carregar pacotes;
-2. Mapa com o pacote raster;
-3. Mapa com o pacote geobr.
+1. Carregar pacotes
+2. Mapa com o pacote raster
+3. Mapa com o pacote geobr
+- Consultar datasets;
+- Visualizar datasets.
+4. Mapa do número de escolas urbanas e rurais
+- Manipular dados;
+- Criar mapa.
