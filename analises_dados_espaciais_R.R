@@ -74,5 +74,9 @@ dados_escolas1 <- dados_escolas %>%
 
 ggplot() +
   geom_sf(data = dados_estados1) +
-  geom_sf(data = dados_escolas1, aes(color =  urban, 
-                                     fill = urban))
+  geom_sf(data = dados_escolas1, aes(color =  urban,
+                                     fill = urban)) +
+  scale_color_manual(values = c("#98374983", "red"),       
+   name = "Tipos de escola") +
+  scale_fill_manual(values = c("#98374983", "red"),       
+   name = "Tipos de escola")
