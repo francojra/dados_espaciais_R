@@ -53,16 +53,16 @@ ggplot() +
 dados_escolas <- geobr::read_schools()
 view(dados_escolas)
 
-## Tipo de dados
+# Mapa do número de escolas urbanas e rurais -----------------------------------------------------------------------------------------------
 
-class(dados_escolas)
-
-## Selecionar apenas as primeiras 250 observações
-
-dados_escolas <- dados_escolas[1:1000, ]
+dados_estados1 <- dados_estados |>
+  filter(name_region == "Norte")
+view(dados_estados1)
 
 dados_escolas1 <- dados_escolas %>%
-  select(name_muni, urban) %>%
+  select(name_muni, urban, abbrev_state) %>%
+  filter(abbrev_state %in% c("RO", "AC", "AM", "RR", "PA",
+                             "AP", "TO")) %>%
   drop_na() %>%
   group_by(name_muni, urban) %>%
   summarise(n = n()) %>%
