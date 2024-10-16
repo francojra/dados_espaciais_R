@@ -72,4 +72,5 @@ glimpse(dados_escolas1)
 
 ggplot() +
   geom_sf(data = dados_estados) +
-  geom_sf(data = dados_escolas1)
+  geom_sf(data = dados_escolas1, aes(color =  urban, 
+                                     fill = urban))
