@@ -47,6 +47,9 @@ view(dados_amazonia)
 dados_estados <- geobr::read_state()
 view(dados_estados)
 
+ggplot() +
+  geom_sf(data = dados_estados)
+
 dados_escolas <- geobr::read_schools()
 view(dados_escolas)
 
@@ -56,7 +59,7 @@ class(dados_escolas)
 
 ## Selecionar apenas as primeiras 250 observações
 
-dados_escolas <- dados_escolas[1:250, ]
+dados_escolas <- dados_escolas[1:1000, ]
 
 dados_escolas1 <- dados_escolas %>%
   select(name_muni, urban) %>%
@@ -64,6 +67,9 @@ dados_escolas1 <- dados_escolas %>%
   group_by(name_muni, urban) %>%
   summarise(n = n()) %>%
   view()
-  
+
+glimpse(dados_escolas1)
+
 ggplot() +
+  geom_sf(data = dados_estados) +
   geom_sf(data = dados_escolas1)
